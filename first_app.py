@@ -1,3 +1,5 @@
-@st.cache_data
-def long_running_function(param1, param2):
-    return …
+import streamlit as st
+
+conn = st.connection("my_database")
+df = conn.query("select * from my_table")
+st.dataframe(df)
